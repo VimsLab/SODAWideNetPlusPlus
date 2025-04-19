@@ -15,7 +15,69 @@ Salient Object Detection (SOD) has traditionally relied on feature refinement mo
 
 ## COCO Pre-training
 
-Download the dataset and unzip the file. Then, use the following command to train the model.
+Download the dataset and unzip the file. Then, use the following command to train the model. The model sizes can be **L**, **M**, and **S**.
+
+```bash
+python training.py \
+    --lr 0.001 \
+    --epochs 21 \
+    --f_name "COCOSODAWideNet++L" \
+    --n 4 \
+    --b 20 \
+    --sched 1 \
+    --training_scheme "COCO" \
+    --salient_loss_weight 1.0 \
+    --use_pretrained 0 \
+    --im_size 384 \
+    --model_size 'L'
+```
+
+## DUTS Finetuning
+
+Download the dataset from [link](https://drive.google.com/file/d/1-sxp99YoDRSQBebMWXLeI0tlkRsU_LrH/view?usp=sharing) and unzip the file. Then, use the following command to train the model. Create a folder with the name **checkpoints** and save the COCO pre-trained checkpoint in it. 
+
+```bash
+python training.py \
+    --lr 0.001 \
+    --epochs 11 \
+    --f_name "DUTSSODAWideNet++L" \
+    --n 4 \
+    --b 20 \
+    --sched 1 \
+    --training_scheme "DUTS" \
+    --salient_loss_weight 0.5 \
+    --use_pretrained 1 \
+    --checkpoint_name "COCOSODAWideNet++L"
+    --im_size 384 \
+    --model_size 'L'
+```
+
+## Inference
+
+We provide an option to generate the saliency map for a single image or multiple images in a folder. The below script displays the generated saliency map. **model_size** can be **L**, **M**, and **S**.
+```bash
+python inference.py \
+    --mode single \
+    --input_path /path/to/image.jpg \
+    --display \
+    --model_size L
+```
+
+The below script generates a saliency map and saves the result.
+```bash
+python inference.py \
+    --mode single \
+    --input_path /path/to/image.jpg \
+    --model_size L
+```
+The below script generates saliency maps for a folder of images and saves them in the user-specified output directory.
+```bash
+python inference.py \
+    --mode folder \
+    --input_path /path/to/input/folder \
+    --output_dir /path/to/output/folder \
+    --model_size L
+```
 
 #### Citation
 
