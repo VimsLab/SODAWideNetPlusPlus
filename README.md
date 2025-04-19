@@ -7,11 +7,11 @@ Salient Object Detection (SOD) has traditionally relied on feature refinement mo
 
 ## Model Overview
 
-| Model | Number of Parameters | Pre-computed Saliency Maps | Model Weights |
-|------------|----------------------|----------------------------|---------------|
-| SODAWideNet++    | 26.58M                | [Saliency Maps](https://drive.google.com/drive/folders/12ZpJ5aewFwlX_avG-RNHBWPKaqXTZvIO?usp=sharing) | [Weights](https://drive.google.com/file/d/1HY3zRTmZ58g9RCo8PDza6p0Kg0x5POLF/view?usp=sharing) | 
-| SODAWideNet++-M   | 6.66M                | [Saliency Maps](https://drive.google.com/drive/folders/1zdf1j8xsPnSWS3xK2HAMoz2u9MJoK8iT?usp=sharing) | [Weights](https://drive.google.com/file/d/10kwnn9asoUeZSsjIuZQMKjm_XPNrv3i0/view?usp=sharing) |
-| SODAWideNet++-S    | 1.67M                | [Saliency Maps](https://drive.google.com/drive/folders/1_MtnVz1qU63AlrlZ98fCu51gNVyMDnWA?usp=sharing) | [Weights](https://drive.google.com/file/d/1RRRIUYAZU_8Si0yNPvSCimz1m3kEIBIe/view?usp=sharing) |
+| Model | Number of Parameters | Pre-computed Saliency Maps | Model Weights | Pre-trained Weights |
+|------------|----------------------|----------------------------|---------------|---------------|
+| SODAWideNet++    | 26.58M                | [Saliency Maps](https://drive.google.com/drive/folders/12ZpJ5aewFwlX_avG-RNHBWPKaqXTZvIO?usp=sharing) | [Weights](https://drive.google.com/file/d/1HY3zRTmZ58g9RCo8PDza6p0Kg0x5POLF/view?usp=sharing) | [Pre-trained Weights](https://drive.google.com/file/d/1gsDc77dNn2lFAMbnnteKhJjNoG3ZXSbe/view?usp=sharing) |
+| SODAWideNet++-M   | 6.66M                | [Saliency Maps](https://drive.google.com/drive/folders/1zdf1j8xsPnSWS3xK2HAMoz2u9MJoK8iT?usp=sharing) | [Weights](https://drive.google.com/file/d/10kwnn9asoUeZSsjIuZQMKjm_XPNrv3i0/view?usp=sharing) | Pre-trained Weights |
+| SODAWideNet++-S    | 1.67M                | [Saliency Maps](https://drive.google.com/drive/folders/1_MtnVz1qU63AlrlZ98fCu51gNVyMDnWA?usp=sharing) | [Weights](https://drive.google.com/file/d/1RRRIUYAZU_8Si0yNPvSCimz1m3kEIBIe/view?usp=sharing) | [Pre-trained Weights](https://drive.google.com/file/d/1xu0eOa51ufxiGM4gq1b0ay9WAi_Y_J9b/view?usp=sharing) |
 
 ## COCO Pre-training
 
