@@ -4,8 +4,7 @@ from torch.autograd import Variable
 from math import exp
 torch.multiprocessing.set_sharing_strategy('file_system')
 sys.path.append("../checkpoints")
-from SODAWideNetPlusPlus import * 
-from cosine_annealing_warmup import CosineAnnealingWarmupRestarts
+from SODAWideNetPlusPlus import *
 import tqdm
 
 def re_Dice_Loss(inputs, targets, cuda=False, balance=1.1):
