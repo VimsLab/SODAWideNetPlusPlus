@@ -248,7 +248,6 @@ class Self_Attn_MRFFAM(nn.Module):
 			self.value_conv = DoubleConvMod(in_dim ,in_dim , kernel_size= 1, padding = 0, dilation=1)
 
 		self.query_conv = DoubleConvMod(in_dim , in_dim//factor , kernel_size= 1, padding = 0, dilation=1)
-		# self.gamma = nn.Parameter(torch.zeros(1))
 
 		self.softmax  = nn.Softmax(dim=-1)
 		self.C = in_dim
@@ -256,7 +255,6 @@ class Self_Attn_MRFFAM(nn.Module):
 
 	def forward(self, x):
 		m_batchsize,C,width ,height = x.size()
-		# m_batchsize_k,C_k,width_k ,height_k = y.size()
 		proj_query  = self.query_conv(x).view(m_batchsize,-1,width*height).permute(0,2,1) # B X C X (N)
 		proj_key =  self.key_conv(x).view(m_batchsize,-1,width // self.sr_ratio * height//self.sr_ratio) # B X C x (*W*H)
 		energy =  torch.bmm(proj_query,proj_key)
@@ -266,7 +264,6 @@ class Self_Attn_MRFFAM(nn.Module):
 		out = torch.bmm(proj_value,attention.permute(0,2,1) )
 		out = out.view(m_batchsize,self.C,width,height)
 
-		# out = self.gamma*out
 		return out
 
 class SODAWideNetPlusPlus(nn.Module):
@@ -276,8 +273,7 @@ class SODAWideNetPlusPlus(nn.Module):
 	n_classes, 
 	bilinear = True, 
 	use_contour = False,
-	deep_supervision = False, 
-	ssl = False, 
+	deep_supervision = False,
 	factorw = 1,
 	dilation_rates = [[1, 2, 3, 4, 5], [1, 2, 3, 4]]):
 
@@ -356,9 +352,6 @@ class SODAWideNetPlusPlus(nn.Module):
 		ds2 = self.down2(x2)
 		x3 = self.comb2(res2, ds2)
 
-		if self.ssl:
-			ssl = [x1, x2, x3]
-
 		if self.deep_supervision:
 
 			ll_smallest = self.up3b(self.outsdd(ds1))
@@ -408,9 +401,6 @@ class SODAWideNetPlusPlus(nn.Module):
 			saliency.append(logits)
 			contours.append(contour_s)
 
-			if self.ssl:
-				return ssl, contours, saliency
-
 			return contours, saliency
 
 		else:
@@ -424,4 +414,3 @@ class SODAWideNetPlusPlus(nn.Module):
 
 			saliency.append(logits)
 			return saliency
-
