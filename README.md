@@ -15,7 +15,7 @@ Salient Object Detection (SOD) has traditionally relied on feature refinement mo
 
 ## COCO Pre-training
 
-Download the dataset and unzip the file. Then, use the following command to train the model. The model sizes can be **L**, **M**, and **S**.
+Download the [dataset](https://drive.google.com/file/d/1FfLXKB3qp1ak1qSWboqqqvSkVyeE4nSG/view?usp=sharing) and unzip the file. Then, use the following command to train the model. The model sizes can be **L**, **M**, and **S**.
 
 ```bash
 python training.py \
@@ -34,7 +34,7 @@ python training.py \
 
 ## DUTS Finetuning
 
-Download the dataset from [link](https://drive.google.com/file/d/1-sxp99YoDRSQBebMWXLeI0tlkRsU_LrH/view?usp=sharing) and unzip the file. Then, use the following command to train the model. Create a folder with the name **checkpoints** and save the COCO pre-trained checkpoint in it. 
+Download the dataset from [link](https://drive.google.com/file/d/1-sxp99YoDRSQBebMWXLeI0tlkRsU_LrH/view?usp=sharing) and unzip the file. Then, use the following command to train the model. Also, download the [DUTS-TE](https://drive.google.com/drive/folders/1cgSiEQhenezXg7DsMcj7COU7S-o2asqE?usp=sharing) dataset for evaluation. Create a folder with the name **checkpoints** and save the COCO pre-trained checkpoint in it. 
 
 ```bash
 python training.py \
