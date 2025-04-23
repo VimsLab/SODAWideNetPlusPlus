@@ -84,15 +84,13 @@ python inference.py \
 If you find our research useful, please cite our paper with the following citation - 
 
 ```
-@InProceedings{10.1007/978-3-031-78192-6_14,
-    author="Dulam, Rohit Venkata Sai and Kambhamettu, Chandra",
-    title="SODAWideNet++: Combining Attention and Convolutions for Salient Object Detection",
-    booktitle="Pattern Recognition",
-    year="2025",
-    publisher="Springer Nature Switzerland",
-    address="Cham",
-    pages="210--226",
-    isbn="978-3-031-78192-6"
+@inproceedings{dulam2025sodawidenet++,
+  title={SODAWideNet++: Combining Attention and Convolutions for Salient Object Detection},
+  author={Dulam, Rohit Venkata Sai and Kambhamettu, Chandra},
+  booktitle={International Conference on Pattern Recognition},
+  pages={210--226},
+  year={2025},
+  organization={Springer}
 }
 ```
 
